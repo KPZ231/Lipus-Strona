@@ -1,0 +1,81 @@
+body {
+  background-color: blanchedalmond;
+}
+
+.allura-regular {
+  font-family: "Allura", cursive;
+  font-weight: 600;
+  font-style: normal;
+}
+
+hr {
+    height: 1px;
+    border: 1px black;
+    background-color: black;
+    border-radius: 100px;
+  }
+
+.h1-div {
+  width: 100vh;
+  margin: auto;
+  position: relative;
+
+  hr {
+    height: 1px;
+    border: 1px black;
+    background-color: black;
+    border-radius: 100px;
+    margin-top: -40px;
+  }
+}
+
+.links {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  a {
+    text-decoration: none;
+    font-family: "Allura";
+    font-size: large;
+    color: darkblue;
+  }
+
+  a:link {
+    color: darkblue;
+  }
+
+  /* visited link */
+  a:visited {
+    color: darkblue;
+  }
+
+  /* mouse over link */
+  a:hover {
+    color: darkblue;
+  }
+
+  /* selected link */
+  a:active {
+    color: darkblue;
+  }
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-family: "Allura";
+  background-color: wheat;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.main-div {
+    padding: 50px;
+    width: 100vh;
+    font-family: "PT Sans Narrow", sans-serif;
+    margin: auto;
+}
