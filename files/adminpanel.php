@@ -45,6 +45,14 @@
     }
     ?>
 
+    <div class="akutalnosciCreator">
+        <form action="aktualnosci.php" method="POST">
+            <textarea name="enterText" id="enterText" placeholder="Wpisz Zawartość: "></textarea>
+
+        </form>
+
+    </div>
+
 </body>
 
 </html>
