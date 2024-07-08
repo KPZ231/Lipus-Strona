@@ -26,27 +26,24 @@
         <hr />
         <div class="links">
             <a href="index.html">
-                <h3>Strona Glówna</h3>
+                <h3>Strona Główna</h3>
             </a>
         </div>
     </div>
     <?php include 'notification.php'; ?>
 
     <?php
-
-
     session_start();
 
     // Check if user is logged in
     if (!isset($_SESSION['username'])) {
         header("Location: login.php");
         exit();
+    } else {
+        // Correctly accessing session variable
+        setcookie("notification", "Zalogowano Jako: " . $_SESSION['username'], time() + 10);
     }
-
-    echo "Witaj, " . $_SESSION['username'] . "! Jesteś zalogowany.";
     ?>
-
-
 
 </body>
 
