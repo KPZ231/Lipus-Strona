@@ -215,6 +215,7 @@ input[type="submit"]:hover {
   background-color: #f4a261;
   color: #000000;
 }
+
 /* Notification Styles */
 .notification {
   position: fixed;
@@ -251,7 +252,7 @@ input[type="submit"]:hover {
 
 .akutalnosciCreator {
   width: 30%;
-  height: 25vh;
+  height: 30vh;
   background-color: rgba(255, 217, 204, 0.7);
   border-radius: 10px;
   margin: auto;
@@ -276,4 +277,30 @@ input[type="submit"]:hover {
     box-shadow: 1px 1px 10px #d38572;;
   }
 
+}
+
+
+.akutalnosciContainer {
+  font-family: "PT Sans Narrow", sans-serif;
+  width: 50%;
+  height: auto;
+  padding: 25px;
+  margin: auto;
+  align-items: center;
+  display: flex;            /* Added */
+  flex-direction: column;   /* Added */
+  gap: 5vh;                 /* Added */
+}
+
+.akutalnosc {
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(255, 217, 204, 1);
+  text-align: center;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: fit-content;
 }

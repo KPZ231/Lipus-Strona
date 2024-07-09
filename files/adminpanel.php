@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+} else {
+    // Correctly accessing session variable
+    setcookie("notification", "Zalogowano Jako: " . $_SESSION['username'], time() + 10);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -32,27 +45,46 @@
     </div>
     <?php include 'notification.php'; ?>
 
-    <?php
-    session_start();
-
-    // Check if user is logged in
-    if (!isset($_SESSION['username'])) {
-        header("Location: login.php");
-        exit();
-    } else {
-        // Correctly accessing session variable
-        setcookie("notification", "Zalogowano Jako: " . $_SESSION['username'], time() + 10);
-    }
-    ?>
-
     <div class="akutalnosciCreator">
-        <form action="aktualnosci.php" method="POST">
-            <textarea name="enterText" id="enterText" placeholder="Wpisz Zawartość: "></textarea>
-
+        <form action="adminpanel.php" method="POST" id="enterAktualnosci">
+            <textarea name="enterText" id="enterText" placeholder="Wpisz Zawartość: " required form="enterAktualnosci"></textarea>
+            <input type="submit" value="Wyślij" name="wyslij">
         </form>
 
-    </div>
+        <?php
+        $conn = mysqli_connect("localhost", "root", "", "lipus");
 
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+
+        if (isset($_POST['wyslij'])) {
+            $textValue = mysqli_real_escape_string($conn, $_POST['enterText']);
+            $username = mysqli_real_escape_string($conn, $_SESSION['username']);
+
+            // Fetch the user ID based on the username
+            $userIdQuery = "SELECT _id FROM uzytkownicy_administracyjni WHERE _imie = '$username'";
+            $result = mysqli_query($conn, $userIdQuery);
+
+            if ($result && mysqli_num_rows($result) > 0) {
+                $row = mysqli_fetch_assoc($result);
+                $userId = $_SESSION['username'];
+
+                $sql = "INSERT INTO aktualnosci (_value, _uzytkownik_wypychajacy) VALUES ('$textValue', '$userId')";
+
+                if (mysqli_query($conn, $sql)) {
+                    setcookie("notification", "Wysłano", time() + 10);
+                } else {
+                    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                }
+            } else {
+                echo "Error: User not found.";
+            }
+        }
+
+        mysqli_close($conn);
+        ?>
+    </div>
 </body>
 
 </html>
