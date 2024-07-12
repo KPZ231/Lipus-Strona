@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet" />
@@ -88,7 +88,10 @@
   <h2 style="font-family: Allura, cursive; text-align:center; font-size: 30pt;">Wasze Zdjęcia</h2>
   <hr style="width: 60%;">
   <form action="upload.php" method="post" enctype="multipart/form-data" style="text-align: center;">
-    <label for="fileToUpload">Wybierz zdjęcie do przesłania:</label>
+    <label for="fileToUpload" class="custom-file-upload">Wybierz zdjęcie do przesłania: &nbsp;&nbsp;
+      <i class="material-icons">cloud_upload</i>
+    </label>
+    
     <input type="file" name="fileToUpload" id="fileToUpload">
     <input type="submit" value="Dodaj zdjęcie" name="submit">
   </form>

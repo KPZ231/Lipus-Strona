@@ -63,6 +63,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php include 'notification.php'; ?>
 
     <div class="akutalnosciCreator">
+        <h2 style="text-align:center; font-family: PT Sans Narrow, sans-serif;">Tworzenie Nowej Akutalności</h2>
+        <hr>
+        <br>
         <form action="adminpanel.php" method="POST" id="enterAktualnosci">
             <textarea name="enterText" id="enterText" placeholder="Wpisz Zawartość: " required form="enterAktualnosci"></textarea>
             <input type="submit" value="Wyślij" name="wyslij">
@@ -103,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ?>
     </div>
 
-    <h2>Zatwierdzanie Zdjęć</h2>
+    <h2 style="text-align:center; font-family: PT Sans Narrow, sans-serif;">Zatwierdzanie Zdjęć</h2>
     <div class="zdjecia-do-zatwierdzenia">
         <?php
         $images = glob($imagesDir . "*.{jpg,jpeg,png,gif}", GLOB_BRACE);
@@ -123,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ?>
     </div>
 
-    <h2>Zatwierdzone Zdjęcia</h2>
+    <h2 style="text-align:center; font-family: PT Sans Narrow, sans-serif;">Zatwierdzone Zdjęcia</h2>
     <div class="zatwierdzone-zdjecia">
         <?php
         $approvedImages = glob($approvedDir . "*.{jpg,jpeg,png,gif}", GLOB_BRACE);
