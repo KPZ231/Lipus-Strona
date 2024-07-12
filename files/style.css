@@ -273,12 +273,10 @@ input[type="submit"]:hover {
     outline: none;
   }
 
-  textarea:focus{
-    box-shadow: 1px 1px 10px #d38572;;
+  textarea:focus {
+    box-shadow: 1px 1px 10px #d38572;
   }
-
 }
-
 
 .akutalnosciContainer {
   font-family: "PT Sans Narrow", sans-serif;
@@ -287,9 +285,9 @@ input[type="submit"]:hover {
   padding: 25px;
   margin: auto;
   align-items: center;
-  display: flex;            /* Added */
-  flex-direction: column;   /* Added */
-  gap: 5vh;                 /* Added */
+  display: flex; /* Added */
+  flex-direction: column; /* Added */
+  gap: 5vh; /* Added */
 }
 
 .akutalnosc {
@@ -301,6 +299,38 @@ input[type="submit"]:hover {
   border-radius: 10px;
   background-color: rgba(255, 217, 204, 1);
   text-align: center;
+  box-shadow: 1px 1px 10px black;
   font-family: "PT Sans Narrow", sans-serif;
   font-size: fit-content;
 }
+
+.zdjeciazlowiska {
+  font-family: "PT Sans Narrow", sans-serif;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+div.gallery {
+  margin: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.gallery:hover {
+  box-shadow: 1px 1px 10px black;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+

@@ -66,7 +66,7 @@ session_start(); // Upewnij się, że sesja jest rozpoczęta
             <a href="aktualnosci.php">
                 <h3>Aktualności</h3>
             </a>
-            <a href="">
+            <a href="zdjecia.php">
                 <h3>Zdjęcia</h3>
             </a>
         </div>
@@ -89,13 +89,14 @@ session_start(); // Upewnij się, że sesja jest rozpoczęta
             while ($res = mysqli_fetch_row($sql)) {
                 echo '<div class="akutalnosc">';
                 echo '<h3>' . htmlspecialchars($res[1], ENT_QUOTES, 'UTF-8') . '</h3>';
+                echo "<hr>";
                 echo '<h2>Dodane Przez: ' . htmlspecialchars($res[2], ENT_QUOTES, 'UTF-8') . '</h2>';
-                
+
                 // Display delete button if session is set
                 if (isset($_SESSION['username'])) {
                     echo '<button onclick="deleteAktualnosc(' . $res[0] . ')">Usuń Aktualność</button>';
                 }
-                
+
                 echo '</div>';
             }
         }

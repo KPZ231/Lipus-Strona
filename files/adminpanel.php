@@ -9,11 +9,32 @@ if (!isset($_SESSION['username'])) {
     // Correctly accessing session variable
     setcookie("notification", "Zalogowano Jako: " . $_SESSION['username'], time() + 10);
 }
+
+$imagesDir = "images/";
+$approvedDir = "approved_images/";
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['approve'])) {
+        $imageName = basename($_POST['approve']);
+        if (file_exists($imagesDir . $imageName)) {
+            rename($imagesDir . $imageName, $approvedDir . $imageName);
+            setcookie("notification", "Zatwierdzono zdjęcie: " . $imageName, time() + 10);
+        }
+    } elseif (isset($_POST['delete'])) {
+        $imageName = basename($_POST['delete']);
+        if (file_exists($imagesDir . $imageName)) {
+            unlink($imagesDir . $imageName);
+            setcookie("notification", "Usunięto zdjęcie: " . $imageName, time() + 10);
+        } elseif (file_exists($approvedDir . $imageName)) {
+            unlink($approvedDir . $imageName);
+            setcookie("notification", "Usunięto zatwierdzone zdjęcie: " . $imageName, time() + 10);
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,13 +45,9 @@ if (!isset($_SESSION['username'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet" />
     <title>"Lipuś" - Panel Administracyjny</title>
 </head>
-
 <body>
     <div class="h1-div">
         <h1 class="allura-regular" style="text-align: center; font-size: 52pt">
@@ -85,6 +102,42 @@ if (!isset($_SESSION['username'])) {
         mysqli_close($conn);
         ?>
     </div>
-</body>
 
+    <h2>Zatwierdzanie Zdjęć</h2>
+    <div class="zdjecia-do-zatwierdzenia">
+        <?php
+        $images = glob($imagesDir . "*.{jpg,jpeg,png,gif}", GLOB_BRACE);
+
+        foreach ($images as $image) {
+            $imageName = basename($image);
+            echo '<div class="gallery">';
+            echo '<img src="' . $image . '" alt="' . $imageName . '" width="300" height="200">';
+            echo '<form action="adminpanel.php" method="POST" style="display:inline-block;">';
+            echo '<button type="submit" name="approve" value="' . $imageName . '">Zatwierdź</button>';
+            echo '</form>';
+            echo '<form action="adminpanel.php" method="POST" style="display:inline-block;">';
+            echo '<button type="submit" name="delete" value="' . $imageName . '">Usuń</button>';
+            echo '</form>';
+            echo '</div>';
+        }
+        ?>
+    </div>
+
+    <h2>Zatwierdzone Zdjęcia</h2>
+    <div class="zatwierdzone-zdjecia">
+        <?php
+        $approvedImages = glob($approvedDir . "*.{jpg,jpeg,png,gif}", GLOB_BRACE);
+
+        foreach ($approvedImages as $image) {
+            $imageName = basename($image);
+            echo '<div class="gallery">';
+            echo '<img src="' . $image . '" alt="' . $imageName . '" width="300" height="200">';
+            echo '<form action="adminpanel.php" method="POST" style="display:inline-block;">';
+            echo '<button type="submit" name="delete" value="' . $imageName . '">Usuń</button>';
+            echo '</form>';
+            echo '</div>';
+        }
+        ?>
+    </div>
+</body>
 </html>
