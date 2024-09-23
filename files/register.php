@@ -16,6 +16,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet" />
     <title>"Lipuś" - Panel Administracyjny</title>
+    <script>
+        // Skrypt uruchamiający się przed załadowaniem zawartości strony
+        document.addEventListener("DOMContentLoaded", function () {
+            // Ustal tutaj hasło do weryfikacji
+            const correctPassword = "LowiskoLipusHasloTymczasowe";
+            
+            // Wyświetl okienko prompt do wpisania hasła
+            let userPassword = prompt("Podaj hasło, aby uzyskać dostęp do rejestracji:");
+
+            // Sprawdź, czy podane hasło jest poprawne
+            if (userPassword === correctPassword) {
+                // Jeśli hasło jest poprawne, użytkownik otrzymuje dostęp do strony
+                alert("Hasło poprawne. Dostęp do rejestracji przyznany.");
+            } else {
+                // Jeśli hasło jest niepoprawne, użytkownik nie dostanie dostępu
+                alert("Nieprawidłowe hasło. Dostęp do strony zablokowany.");
+                // Zablokowanie dostępu - przekierowanie użytkownika na inną stronę lub zamknięcie
+                window.location.href = "https://example.com"; // Możesz tu wstawić np. stronę główną
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -31,7 +52,6 @@
         </div>
     </div>
     <?php include 'notification.php'; ?>
-
 
     <div class="register">
         <h1>Rejestracja</h1>

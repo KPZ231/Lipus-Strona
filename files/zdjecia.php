@@ -32,6 +32,7 @@
     setcookie("notification", "", time() - 3600); // Wyczyść ciasteczko powiadomienia
   }
   ?>
+  <img src="page_images/icon.png" alt="" width="72" height="72" style="position: absolute; top: 10px;">
   <div class="h1-div">
     <h1 class="allura-regular" style="text-align: center; font-size: 52pt">
       Łowisko Wędkarskie "Lipuś" - Zdjęcia
@@ -61,26 +62,25 @@
   <div class="zdjeciazlowiska">
 
     <div class="gallery">
-      <a target="_blank" href="https://scontent-waw2-1.xx.fbcdn.net/v/t1.6435-9/108153463_166815224890176_3605460376888463576_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=7b2446&_nc_ohc=-xD865u3QogQ7kNvgGZ8b9V&_nc_ht=scontent-waw2-1.xx&oh=00_AYAm4X0nJCeD-MFWpYmPvRJUxNLAFifvDJSsOkhaflJ6WQ&oe=66B5BA94">
-        <img src="https://scontent-waw2-1.xx.fbcdn.net/v/t1.6435-9/108153463_166815224890176_3605460376888463576_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=7b2446&_nc_ohc=-xD865u3QogQ7kNvgGZ8b9V&_nc_ht=scontent-waw2-1.xx&oh=00_AYAm4X0nJCeD-MFWpYmPvRJUxNLAFifvDJSsOkhaflJ6WQ&oe=66B5BA94" alt="photo" width="600" height="400">
+      <a target="_blank" href="">
+        <img src="page_images/107487379_165814818323550_5395329337564436489_n.jpg" alt="photo" width="600" height="400">
       </a>
     </div>
 
     <div class="gallery">
-      <a target="_blank" href="https://scontent-waw2-1.xx.fbcdn.net/v/t1.6435-9/120235430_187061182865580_6520055962214538930_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=13d280&_nc_ohc=vcsZtKjI88QQ7kNvgG6m2aq&_nc_ht=scontent-waw2-1.xx&oh=00_AYAJJOoKGky2PksPtQ4bw8LUEFJvAhqQkgPEwlHBIdkoDQ&oe=66B5E1C3">
-        <img src="https://scontent-waw2-1.xx.fbcdn.net/v/t1.6435-9/120235430_187061182865580_6520055962214538930_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=13d280&_nc_ohc=vcsZtKjI88QQ7kNvgG6m2aq&_nc_ht=scontent-waw2-1.xx&oh=00_AYAJJOoKGky2PksPtQ4bw8LUEFJvAhqQkgPEwlHBIdkoDQ&oe=66B5E1C3" alt="photo" width="600" height="400">
+      <a target="_blank" href="">
+        <img src="page_images/120235430_187061182865580_6520055962214538930_n.jpg" alt="photo" width="600" height="400">
+      </a>
+    </div>
+    <div class="gallery">
+      <a target="_blank" href="">
+        <img src="page_images/108153463_166815224890176_3605460376888463576_n.jpg" alt="photo" width="600" height="400">
       </a>
     </div>
 
     <div class="gallery">
-      <a target="_blank" href="https://scontent-waw2-1.xx.fbcdn.net/v/t1.6435-9/120322265_187061282865570_1391016298988347295_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=13d280&_nc_ohc=7GHKjObDq0oQ7kNvgHOpV9n&_nc_ht=scontent-waw2-1.xx&oh=00_AYDlbyf13u7t2kFx5knR4KSZM3EkrV6vAMg1ELPadW_LoA&oe=66B5E02B">
-        <img src="https://scontent-waw2-1.xx.fbcdn.net/v/t1.6435-9/120322265_187061282865570_1391016298988347295_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=13d280&_nc_ohc=7GHKjObDq0oQ7kNvgHOpV9n&_nc_ht=scontent-waw2-1.xx&oh=00_AYDlbyf13u7t2kFx5knR4KSZM3EkrV6vAMg1ELPadW_LoA&oe=66B5E02B" alt="photo" width="600" height="400">
-      </a>
-    </div>
-
-    <div class="gallery">
-      <a target="_blank" href="https://scontent-waw2-1.xx.fbcdn.net/v/t39.30808-6/185560760_308906000681097_6135573939482353410_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=rRr9cYfnUGQQ7kNvgGSu_rd&_nc_ht=scontent-waw2-1.xx&oh=00_AYCIjREdRCqMwSyUhkydX-wscIES5JpMtouN49FcIIM6ow&oe=66942BD5">
-        <img src="https://scontent-waw2-1.xx.fbcdn.net/v/t39.30808-6/185560760_308906000681097_6135573939482353410_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=rRr9cYfnUGQQ7kNvgGSu_rd&_nc_ht=scontent-waw2-1.xx&oh=00_AYCIjREdRCqMwSyUhkydX-wscIES5JpMtouN49FcIIM6ow&oe=66942BD5" alt="photo" width="600" height="400">
+      <a target="_blank" href="">
+        <img src="page_images/120275069_187061262865572_4663834638647213924_n.jpg" alt="photo" width="600" height="400">
       </a>
     </div>
   </div>

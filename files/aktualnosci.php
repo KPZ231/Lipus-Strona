@@ -48,6 +48,7 @@ session_start(); // Upewnij się, że sesja jest rozpoczęta
 </head>
 
 <body>
+<img src="page_images/icon.png" alt="" width="72" height="72" style="position: absolute; top: 10px;">
     <div class="h1-div">
         <h1 class="allura-regular" style="text-align: center; font-size: 49pt">
             Łowisko Wędkarskie "Lipuś" - Aktualności
