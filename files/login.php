@@ -54,13 +54,7 @@
                 echo "Wszystkie pola są wymagane.";
             } else {
                 // Database connection
-                $servername = "localhost"; // zmień na właściwy serwer
-                $dbusername = "root"; // zmień na właściwą nazwę użytkownika
-                $dbpassword = ""; // zmień na właściwe hasło
-                $dbname = "lipus";
-
-                // Create connection
-                $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
+                include 'conn.php';
 
                 // Check connection
                 if ($conn->connect_error) {

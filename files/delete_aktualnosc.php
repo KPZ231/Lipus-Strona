@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-$conn = mysqli_connect("localhost", "root", "", "lipus");
+include  'conn.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $data = json_decode(file_get_contents('php://input'), true);

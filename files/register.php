@@ -77,17 +77,10 @@
             } elseif ($password !== $repeatPassword) {
                 echo "Hasła nie są zgodne.";
             } else {
+                include  'conn.php';
+
                 // Hash the password using bcrypt
                 $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-
-                // Database connection
-                $servername = "localhost"; // zmień na właściwy serwer
-                $dbusername = "root"; // zmień na właściwą nazwę użytkownika
-                $dbpassword = ""; // zmień na właściwe hasło
-                $dbname = "lipus";
-
-                // Create connection
-                $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
 
                 // Check connection
                 if ($conn->connect_error) {

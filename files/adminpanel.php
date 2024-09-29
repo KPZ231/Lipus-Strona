@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </form>
 
         <?php
-        $conn = mysqli_connect("localhost", "root", "", "lipus");
+        include  'conn.php';
 
         if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());

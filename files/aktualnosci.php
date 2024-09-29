@@ -48,7 +48,7 @@ session_start(); // Upewnij się, że sesja jest rozpoczęta
 </head>
 
 <body>
-<img src="page_images/icon.png" alt="" width="72" height="72" style="position: absolute; top: 10px;">
+    <img src="page_images/icon.png" alt="" width="72" height="72" style="position: absolute; top: 10px;">
     <div class="h1-div">
         <h1 class="allura-regular" style="text-align: center; font-size: 49pt">
             Łowisko Wędkarskie "Lipuś" - Aktualności
@@ -75,7 +75,7 @@ session_start(); // Upewnij się, że sesja jest rozpoczęta
 
     <div class="akutalnosciContainer">
         <?php
-        $conn = mysqli_connect("localhost", "root", "", "lipus");
+        include 'conn.php';
 
         if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
